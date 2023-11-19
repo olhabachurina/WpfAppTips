@@ -1,0 +1,41 @@
+﻿<Window x:Class="WpfAppTips.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppTips"
+        mc:Ignorable="d"
+        Title="Калькулятор чаевых" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Сумма счета:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10"/>
+        <TextBox x:Name="billAmountTextBox" Grid.Row="0" Grid.Column="1" Margin="10,10,217,10"/>
+
+        <Label Content="Процент чаевых:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10" Grid.Row="1"/>
+        <ComboBox x:Name="tipPercentageComboBox" Grid.Row="1" Grid.Column="1" Margin="10,10,217,10">
+            <ComboBoxItem Content="10%"/>
+            <ComboBoxItem Content="15%"/>
+            <ComboBoxItem Content="20%"/>
+        </ComboBox>
+
+        <Button Content="Рассчитать" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10" Grid.Row="2" Click="CalculateTip_Click"/>
+
+        <Label Content="Сумма чаевых:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10" Grid.Row="3"/>
+        <TextBlock x:Name="tipResultTextBlock" Grid.Row="3" Grid.Column="1" Margin="10"/>
+        <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10"
+            Foreground="Brown">
+    Вознаграждение  приветствуется, но всегда остается на Ваше усмотрение.
+        </TextBlock>
+    </Grid>
+</Window>
